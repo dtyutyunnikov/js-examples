@@ -1,8 +1,12 @@
 'use strict';
 
 const app = {
+    cardsWrapper: null,
+
     init: function () {
         console.log('init');
+
+        this.cardsWrapper = document.querySelector('.cards');
 
         document.querySelector('#add-card').addEventListener('submit', this.addCard);
 
@@ -13,24 +17,17 @@ const app = {
 
     addCard: function (event) {
         event.preventDefault();
-        console.log('addCard');
 
-        let data = new FormData(event.target);
-        let text = data.get('text');
+        const data = new FormData(event.target);
+        const text = data.get('text');
         if (text.length === 0) {
             console.log('empty text');
 
             return;
         }
 
-        const card = document.querySelector('template[name="card-template"]')
-            .innerHTML
-            .replace('%text%', text);
-
-        const cards = document.querySelector('.cards');
-        cards.insertAdjacentHTML('beforeend', card);
-        const btn = cards.querySelector('.card:last-child > a');
-        btn.addEventListener('click', this.removeCard);
+        app.cardsWrapper.insertAdjacentHTML('beforeend', app.createCard(text));
+        app.cardsWrapper.querySelector('.card:last-child > a.card__remove').addEventListener('click', app.removeCard);
 
         document.querySelector('#text-field').value = '';
     }, 
@@ -38,6 +35,12 @@ const app = {
     removeCard: function (event) {
         event.preventDefault();
         event.target.closest('.card').remove();
+    },
+
+    createCard: function (text) {
+        const template = document.querySelector('template[name="card-template"]').innerHTML;
+
+        return template.replace('%text%', text);
     }
 };
 
