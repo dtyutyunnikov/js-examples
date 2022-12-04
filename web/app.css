@@ -1,3 +1,7 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
 #app {
     background-color: #fff;
     display: grid;
@@ -9,9 +13,31 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    padding: 5px 10px;
 }
-.content {
-    padding: 10px 0;
+main {
+    padding: 10px;
+}
+footer {
+    background-color: #c6c6c6;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+/* Content */
+.add-card-form {
+    display: flex;
+    flex-direction: row nowrap;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    gap: 5px;
+}
+.add-card-form__text {
+    width: 100%;
+    padding: 0 5px;
+}
+.add-card-form__btn {
+    padding: 5px 10px;
 }
 .cards {
     display: grid;
@@ -27,8 +53,10 @@ header {
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    position: relative;
 }
-footer {
-    background-color: #c6c6c6;
-    text-align: center;
+.card__remove {
+    position: absolute;
+    top: 2px;
+    right: 5px;
 }

@@ -6,7 +6,6 @@
     <title>Development</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='app.css'>
-    <script src='main.js'></script>
 </head>
 <body id="app">
     <header>
@@ -20,20 +19,27 @@
             <a href="">Login</a>
         </nav>
     </header>
-    <section class="content">
+    <main role="content">
+        <form action="" method="post" id="add-card" class="add-card-form">
+            <input type="text" name="text" id="text-field" class="add-card-form__text">
+            <input type="submit" name="btn" value="Add" id="add-btn" class="add-card-form__btn">
+        </form>
         <div class="cards">
-            <div class="card"><span>title 1</span></div>
-            <div class="card"><span>title 2</span></div>
-            <div class="card"><span>title 3</span></div>
-            <div class="card"><span>title 4</span></div>
-            <div class="card"><span>title 5</span></div>
-            <div class="card"><span>title 6</span></div>
-            <div class="card"><span>title 7</span></div>
-            <div class="card"><span>title 8</span></div>
+            <div class="card" data-id="1">
+                <span>title 1</span>
+                <a href="" class="card__remove">x</a>
+            </div>
         </div>
-    </section>
+    </main>
     <footer>
         <span>footer</span>
     </footer>
+    <template name="card-template">
+        <div class="card" data-id="%id%">
+            <span>%text%</span>
+            <a href="" class="card__remove">x</a>
+        </div>
+    </template>
+    <script src='app.js'></script>
 </body>
 </html>
