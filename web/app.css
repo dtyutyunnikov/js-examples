@@ -24,6 +24,11 @@ footer {
     padding: 5px 10px;
 }
 
+/* Utilities */
+.hidden {
+    display: none;
+}
+
 /* Content */
 .add-card-form {
     display: flex;
@@ -59,4 +64,23 @@ footer {
     position: absolute;
     top: 2px;
     right: 5px;
+}
+
+.login-area__form {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    width: 200px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: rgb(102, 102, 102);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;;
+}
+.login-area__form input {
+    height: 25px;
+    padding: 0 5px;
 }

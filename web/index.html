@@ -9,14 +9,22 @@
 </head>
 <body id="app">
     <header>
-        <img src="" title="logo" class="logo">
-        <nav class="main-menu">
-            <a href="#">Events</a>
-            <a href="#">Grid</a>
-            <a href="#">Form</a>
-        </nav>
+        <span class="logo">Test</span>
         <nav class="user-menu">
-            <a href="">Login</a>
+            <div class="login-area">
+                <a href="" id="login-btn">Login</a>
+                <div id="login-window" class="login-area__window hidden">
+                    <div class="login-area__form">
+                        <label for="user-name-field">Enter your name:</label>
+                        <input type="text" name="user" id="user-name-field">
+                        <input type="button" value="Submit" id="save-name-btn">
+                    </div>
+                </div>
+            </div>
+            <div class="user-area hidden">
+                <span id="user-name"></span> | 
+                <a href="" id="logout-btn">Logout</a>
+            </div>
         </nav>
     </header>
     <main role="content">
